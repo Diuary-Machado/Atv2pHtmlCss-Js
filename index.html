@@ -1,64 +1,256 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A Mandioca</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-    <div class="container">
-        <h1>Mandioca</h1>
-        <p>"Aproveitamento Integral de Alimentos"</p>
-    </div>
-</header>
+    <header>
+        <div class="container">
+            <h1>Mandioca</h1>
+            <p>"Aproveitamento Integral de Alimentos"</p>
+        </div>
+    </header>
 
-<main>
-    <div class="sidebar">
-        <h2>Menu</h2>
-        <ul>
-            <li><a href="https://www.embrapa.br/mandioca-e-fruticultura/cultivos/mandioca" target="_blank">Mandioca</a></li>
-            <li><a href="https://digital.agrishow.com.br/culturas/passo-passo-para-o-plantio-de-mandioca" target="_blank">Cultivo</a></li>
-            <li>
-                <a href="#" class="submenu-toggle">Preparo</a>
-                <ul class="submenu">
-                    <li><a href="#">Raiz</a></li>
-                    <li><a href="#">Rama</a></li>
-                    <li><a href="#">Folhas</a></li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-    </div>
-    <div class="content">
-       
+    <main>
+        <div class="sidebar">
+            <h2>Menu</h2>
+            <ul>
+                <li><a href="#" class="open-modal" data-modal="mandiocaModal">Mandioca</a></li>
+                <li><a href="#" class="open-modal" data-modal="cultivoModal">Cultivo</a></li>
+                <li>
+                    <a href="#" class="submenu-toggle">Preparo</a>
+                    <ul class="submenu">
+                        <li><a href="#" class="open-modal" data-modal="raizModal">Raiz</a></li>
+                        <li><a href="#" class="open-modal" data-modal="ramaModal">Rama</a></li>
+                        <li><a href="#" class="open-modal" data-modal="folhasModal">Folhas</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
         <div class="content">
             <div class="card">
                 <h3>O que é a Mandioca?</h3>
                 <img src="mandioca.jpg" alt="Mandioca" class="card-img">
-                <p>A mandioca é uma planta com compostos cianogênicos, sendo consumida na forma de aipim
-                ou macaxeira quando possui baixo teor dessas substâncias. Na indústria, a mandioca “brava” é transformada em farinha e fécula, utilizadas em diversos setores, como alimentos e cosméticos. Variedades biofortificadas são ricas em carotenoides, 
-                que ajudam a combater a desnutrição.</p>
+                <p>A mandioca é uma planta com compostos cianogênicos, sendo consumida na forma de aipim ou macaxeira
+                    quando possui baixo teor dessas substâncias. Na indústria, a mandioca “brava” é transformada em
+                    farinha e fécula, utilizadas em diversos setores, como alimentos e cosméticos. Variedades
+                    biofortificadas são ricas em carotenoides, que ajudam a combater a desnutrição.</p>
             </div>
-        
+
             <div class="card">
                 <h3>Origem e Cultivo</h3>
                 <img src="criacao.jpg" alt="Cultivo da Mandioca" class="card-img">
                 <p>A mandioca, originária da América do Sul, é uma planta perene pertencente à família Euphorbiaceae.
-                Ela é amplamente cultivada em regiões tropicais e subtropicais devido à sua resistência em condições adversas, como pragas e secas. A espécie mais cultivada é a Manihot esculenta, cujas raízes tuberosas são a principal fonte de alimento.                    
-                O cultivo da mandioca envolve o plantio de brotos, conhecidos como estacas, que podem ser colocados diretamente no solo. A mandioca se adapta bem a diferentes tipos de solo e climas, mas prefere locais com boa drenagem e temperatura amena. O crescimento é rápido, levando de 8 a 24 meses para a colheita,
-                dependendo da variedade e das condições climáticas.
-                <p>
+                    Ela é amplamente cultivada em regiões tropicais e subtropicais devido à sua resistência em condições
+                    adversas, como pragas e secas. A espécie mais cultivada é a Manihot esculenta, cujas raízes
+                    tuberosas são a principal fonte de alimento. O cultivo da mandioca envolve o plantio de brotos,
+                    conhecidos como estacas, que podem ser colocados diretamente no solo. A mandioca se adapta bem a
+                    diferentes tipos de solo e climas, mas prefere locais com boa drenagem e temperatura amena. O
+                    crescimento é rápido, levando de 8 a 24 meses para a colheita, dependendo da variedade e das
+                    condições climáticas.</p>
             </div>
-        
-            <div class="card">
+
+            <div class="card clickable-card" id="benefitsCard">
                 <h3>Benefícios Nutricionais</h3>
                 <img src="mandiocaft.jpg" alt="Benefícios Nutricionais" class="card-img">
-                <p>Nutricionalmente, a mandioca é rica em carboidratos, fibras, vitaminas do complexo B, e minerais como cálcio, ferro e fósforo. Ela não contém glúten, tornando-se uma excelente opção para pessoas com doença celíaca e para aqueles que buscam uma dieta sem glúten. A mandioca é uma fonte de energia rápida e pode ser um importante componente em dietas balanceadas.   
-                Além disso, a mandioca tem um alto teor de fibras, o que ajuda a regular o trânsito intestinal e pode contribuir para a sensação de saciedade, auxiliando no controle de peso. Os carotenoides encontrados em algumas variedades de mandioca, como as biofortificadas, são importantes para a saúde ocular e podem reduzir o risco de doenças crônicas.
-                </p>
+                <p>Nutricionalmente, a mandioca é rica em carboidratos, fibras, vitaminas do complexo B, e minerais como
+                    cálcio, ferro e fósforo. Ela não contém glúten, tornando-se uma excelente opção para pessoas com
+                    doença celíaca e para aqueles que buscam uma dieta sem glúten. A mandioca é uma fonte de energia
+                    rápida e pode ser um importante componente em dietas balanceadas. Além disso, a mandioca tem um alto
+                    teor de fibras, o que ajuda a regular o trânsito intestinal e pode contribuir para a sensação de
+                    saciedade, auxiliando no controle de peso. Os carotenoides encontrados em algumas variedades de
+                    mandioca, como as biofortificadas, são importantes para a saúde ocular e podem reduzir o risco de
+                    doenças crônicas.</p>
+                <div class="click-indicator">Clique para saber mais!</div>
+            </div>
+
+            <div class="modal" id="recipesModal">
+                <div class="modal-content">
+                    <h3>Receitas com Mandioca</h3>
+                    <p>Aqui estão algumas receitas deliciosas que utilizam a mandioca:</p>
+                    <ul class="recipe-list">
+                        <li>
+                            <strong>Purê de Mandioca:</strong>
+                            <span class="recipe-description">
+                                Cozinhe a mandioca em água fervente até que fique macia (cerca de 20-30 minutos).
+                                Escorra a água e amasse a mandioca com um garfo ou um espremedor. Misture manteiga a
+                                gosto, sal e pimenta até obter uma consistência cremosa. Sirva quente como
+                                acompanhamento.
+                            </span>
+                        </li>
+                        <li>
+                            <strong>Bolo de Mandioca:</strong>
+                            <span class="recipe-description">
+                                Rale 500g de mandioca e misture com 2 xícaras de açúcar, 4 ovos e 1 xícara de leite de
+                                coco. Adicione 1/2 xícara de manteiga derretida e uma pitada de sal. Misture bem e
+                                despeje em uma forma untada. Asse em forno pré-aquecido a 180°C por cerca de 40-50
+                                minutos, ou até que o topo esteja dourado. Deixe esfriar antes de servir.
+                            </span>
+                        </li>
+                        <li>
+                            <strong>Farofa de Mandioca:</strong>
+                            <span class="recipe-description">
+                                Em uma panela, refogue 1 cebola picada e 2 dentes de alho em 2 colheres de sopa de
+                                manteiga até que fiquem dourados. Adicione 2 xícaras de farinha de mandioca, misturando
+                                bem para incorporar. Tempere com sal, pimenta e ervas de sua preferência. Cozinhe por
+                                mais alguns minutos, mexendo sempre, até que a farofa fique crocante. Sirva como
+                                acompanhamento.
+                            </span>
+                        </li>
+                        <li>
+                            <strong>Chips de Mandioca:</strong>
+                            <span class="recipe-description">
+                                Corte a mandioca em fatias finas (cerca de 2mm de espessura). Frite as fatias em óleo
+                                quente até que fiquem douradas e crocantes. Retire do óleo e coloque sobre papel toalha
+                                para absorver o excesso de gordura. Tempere com sal a gosto e sirva como petisco.
+                            </span>
+                        </li>
+                        <li>
+                            <strong>Escondidinho de Mandioca:</strong>
+                            <span class="recipe-description">
+                                Cozinhe 500g de mandioca até que esteja macia e amasse para fazer um purê. Em uma
+                                panela, refogue 300g de carne moída com cebola e alho até que esteja cozida. Tempere a
+                                gosto. Em um refratário, coloque a carne no fundo, cubra com o purê de mandioca e leve
+                                ao forno a 180°C por 20-30 minutos para gratinar. Sirva quente.
+                            </span>
+                        </li>
+                    </ul>
+                    <button class="close-btn">Fechar</button>
+                </div>
+            </div>
+
+    </main>
+
+    <div class="modal modal-mandioca" id="mandiocaModal">
+        <div class="modal-content">
+            <h3>Mandioca</h3>
+            <img src="mandioca.jpg" alt="Mandioca" class="modal-image">
+            <p>A mandioca é uma planta com compostos cianogênicos, sendo consumida na forma de aipim ou macaxeira quando
+                possui baixo teor dessas substâncias. Na indústria, a mandioca “brava” é transformada em farinha e
+                fécula, utilizadas em diversos setores, como alimentos e cosméticos. Variedades biofortificadas são
+                ricas em carotenoides, que ajudam a combater a desnutrição.</p>
+            <button class="close-btn">Fechar</button>
+        </div>
+    </div>
+
+    <div class="modal modal-cultivo" id="cultivoModal">
+        <div class="modal-content">
+            <h3>Cultivo da Mandioca</h3>
+            <img src="criacao.jpg" alt="Cultivo" class="modal-image">
+            <p>
+                A mandioca, originária da América do Sul, é uma planta perene pertencente à família Euphorbiaceae.
+                Ela é amplamente cultivada em regiões tropicais e subtropicais devido à sua resistência em condições
+                adversas,
+                como pragas e secas. A espécie mais cultivada é a Manihot esculenta, cujas raízes tuberosas
+                são a principal fonte de alimento. O cultivo da mandioca envolve o plantio de brotos, conhecidos como
+                estacas,
+                que podem ser colocados diretamente no solo. A mandioca se adapta bem a diferentes tipos de solo e
+                climas,
+                mas prefere locais com boa drenagem e temperatura amena. O crescimento é rápido, levando de 8 a 24 meses
+                para a colheita, dependendo da variedade e das condições climáticas.
+            </p>
+            <button class="close-btn">Fechar</button>
+        </div>
+    </div>
+
+    <div class="modal" id="raizModal">
+        <div class="modal-content">
+            <h3>Raiz da Mandioca</h3>
+            <img src="fotoMand1.jpg" alt="Raiz da Mandioca" class="modal-image">
+            <p>Descrição sobre o Preparo da Raiz da Mandioca:</p>
+            <p>
+                "A raiz da mandioca é lavada, descascada e cortada em pedaços. Após esse processo, é cozida ou ralada
+                para a extração de
+                suas propriedades nutritivas. Quando seca e moída, transforma-se em farinha, amplamente utilizada em
+                diversas receitas tradicionais.
+                É essencial que a mandioca brava passe por processos de cozimento para neutralizar compostos tóxicos
+                naturais,
+                como o ácido cianídrico, que pode estar presente em algumas variedades de mandioca crua."
+            </p>
+            <button class="close-btn">Fechar</button>
+        </div>
+    </div>
+
+
+    <div class="modal" id="ramaModal">
+        <div class="modal-content">
+            <h3>Rama da Mandioca</h3>
+            <img src="fotoMand2.jpeg" alt="Rama da Mandioca" class="modal-image">
+            <p>Informação sobre a Rama da Mandioca:</p>
+            <p>
+                "A rama da mandioca refere-se às folhas e brotos tenros da planta de mandioca, que é uma importante
+                fonte de alimento em várias culturas. Assim como as raízes, a rama é rica em nutrientes, oferecendo
+                vitaminas e minerais essenciais, como ferro, cálcio e vitamina A.
+                Ela é utilizada em diversas preparações culinárias, como refogados, sopas e saladas, destacando-se por
+                seu sabor delicado e valor nutricional. A colheita da rama pode ser feita ao longo do ciclo da planta,
+                permitindo que os agricultores aproveitem tanto as raízes quanto as partes superiores.
+                O uso da rama da mandioca é uma prática sustentável, pois a planta continua a crescer e produzir raízes
+                após a colheita das folhas."
+            </p>
+            <button class="close-btn">Fechar</button>
+        </div>
+    </div>
+
+    <div class="modal" id="folhasModal">
+        <div class="modal-content">
+            <h3>Folhas da Mandioca</h3>
+            <img src="FotoMand3.jpg" alt="Folhas da Mandioca" class="modal-image">
+            <p>Informação sobre o Preparo das Folhas da Mandioca:</p>
+            <p>
+                "As folhas da mandioca são comestíveis e muito nutritivas, ricas em proteínas, fibras e vitaminas. Elas
+                podem ser utilizadas em diversas receitas, sendo comuns em refogados, sopas e até mesmo em pratos
+                típicos, como a 'farofa de folha de mandioca'.
+                Para o preparo, as folhas devem ser colhidas e lavadas. Em seguida, podem ser picadas e refogadas com
+                alho e cebola, ou utilizadas em caldos e sopas para agregar sabor e nutrientes.
+                É importante cozinhar as folhas antes do consumo para eliminar possíveis compostos tóxicos presentes em
+                sua forma crua. Assim, o consumo das folhas de mandioca é uma forma sustentável de aproveitar
+                integralmente a planta, contribuindo para uma alimentação saudável e nutritiva."
+            </p>
+            <button class="close-btn">Fechar</button>
+        </div>
+    </div>
+
+
+    <script>
+        document.querySelectorAll('.open-modal').forEach(item => {
+            item.addEventListener('click', event => {
+                event.preventDefault();
+                const modalId = item.getAttribute('data-modal');
+                document.getElementById(modalId).style.display = 'flex';
+            });
+        });
+        document.querySelectorAll('.close-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                button.closest('.modal').style.display = 'none';
+            });
+        });
+        window.addEventListener('click', event => {
+            document.querySelectorAll('.modal').forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+        document.getElementById('benefitsCard').addEventListener('click', function () {
+            document.getElementById('recipesModal').style.display = 'block';
+        });
+        document.querySelector('.close-btn').addEventListener('click', function () {
+            document.getElementById('recipesModal').style.display = 'none';
+        });
+        window.onclick = function (event) {
+            const modal = document.getElementById('recipesModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        };
+    </script>
 
 </body>
+
 </html>
